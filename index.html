@@ -2,16 +2,179 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>تشغيل الفيديو</title>
+  <title>موقع الفيديو</title>
+
+  <!-- ✅ مكان كود ادسنس -->
+  <!-- ضع كود AdSense هنا عند القبول -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #f3f3f3;
+    }
+
+    header {
+      background: linear-gradient(45deg, #3f51b5, #2196f3);
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .search-box {
+      margin-top: 10px;
+    }
+
+    .search-box input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .video-card h4 {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .ads {
+      margin: 20px 0;
+      background: #ddd;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact {
+      background: #222;
+      color: white;
+      padding: 20px;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 10px;
+      background: #2196f3;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="text-align:center; font-family:Arial;">
 
-  <h2>مشغل الفيديو</h2>
+<body>
 
-  <video width="90%" controls>
-    <source src="assets/videos/tahara1.mp4" type="video/mp4">
-    المتصفح لا يدعم تشغيل الفيديو.
-  </video>
+<!-- ✅ الرأسية -->
+<header>
+  <h2>موقعي للفيديوهات</h2>
+
+  <div class="search-box">
+    <input type="text" placeholder="ابحث عن فيديو...">
+  </div>
+</header>
+
+<!-- ✅ المحتوى -->
+<div class="container">
+
+  <!-- ✅ مكان الإعلان -->
+  <div class="ads">
+    🔔 هنا إعلان AdSense
+  </div>
+
+  <!-- ✅ شبكة الفيديوهات (124 / 456 / 789) -->
+  <div class="video-grid">
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 1</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 2</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 3</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 4</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 5</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 6</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 7</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 8</h4>
+    </div>
+
+    <div class="video-card">
+      <video src="assets/videos/tahara1.mp4" controls></video>
+      <h4>الفيديو 9</h4>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ✅ خانة راسلنا -->
+<div class="contact">
+  <h3>راسلنا</h3>
+  <input type="text" placeholder="اسمك">
+  <input type="email" placeholder="بريدك">
+  <textarea rows="4" placeholder="رسالتك"></textarea>
+  <button>إرسال</button>
+</div>
 
 </body>
 </html>
