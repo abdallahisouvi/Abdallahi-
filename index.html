@@ -2,179 +2,137 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>موقع الفيديو</title>
+  <title>منصة الفيديو</title>
 
-  <!-- ✅ مكان كود ادسنس -->
-  <!-- ضع كود AdSense هنا عند القبول -->
+  <!-- ✅ كود AdSense هنا بعد القبول -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  -->
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #f3f3f3;
-    }
-
-    header {
-      background: linear-gradient(45deg, #3f51b5, #2196f3);
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-
-    .search-box {
-      margin-top: 10px;
-    }
-
-    .search-box input {
-      width: 80%;
-      padding: 10px;
-      border-radius: 20px;
-      border: none;
-      outline: none;
-    }
-
-    .container {
-      padding: 15px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .video-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-
-    .video-card video {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .video-card h4 {
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    .ads {
-      margin: 20px 0;
-      background: #ddd;
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .contact {
-      background: #222;
-      color: white;
-      padding: 20px;
-    }
-
-    .contact input, .contact textarea {
-      width: 100%;
-      margin: 5px 0;
-      padding: 8px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    .contact button {
-      width: 100%;
-      padding: 10px;
-      background: #2196f3;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+    body { margin: 0; font-family: Arial; background: #f3f3f3; }
+    header { background: linear-gradient(45deg, #3f51b5, #2196f3); padding: 20px; color: white; text-align: center; }
+    .search-box input { margin-top: 10px; width: 80%; padding: 10px; border-radius: 20px; border: none; }
+    .container { padding: 15px; }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .video-card { background: white; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,0.2); cursor: pointer; }
+    .video-card img { width: 100%; height: 150px; object-fit: cover; }
+    .video-card h4 { font-size: 13px; padding: 5px; }
+    .pagination { text-align: center; margin: 20px 0; }
+    .pagination button { padding: 10px 20px; margin: 5px; border: none; background: #2196f3; color: white; border-radius: 5px; }
+    .ads { background: #ddd; text-align: center; padding: 20px; border-radius: 10px; margin: 15px 0; }
+    .contact { background: #222; color: white; padding: 20px; }
+    .contact input, .contact textarea { width: 100%; margin: 6px 0; padding: 8px; border-radius: 5px; border: none; }
+    .contact button { width: 100%; padding: 10px; background: #2196f3; border: none; color: white; border-radius: 5px; }
+    footer { text-align:center; padding:15px; font-size:13px; }
   </style>
 </head>
 
 <body>
 
-<!-- ✅ الرأسية -->
 <header>
-  <h2>موقعي للفيديوهات</h2>
-
+  <h2>منصة الفيديو</h2>
   <div class="search-box">
-    <input type="text" placeholder="ابحث عن فيديو...">
+    <input type="text" id="search" placeholder="ابحث عن فيديو..." onkeyup="searchVideos()">
   </div>
 </header>
 
-<!-- ✅ المحتوى -->
 <div class="container">
 
-  <!-- ✅ مكان الإعلان -->
-  <div class="ads">
-    🔔 هنا إعلان AdSense
-  </div>
+  <div class="ads">📢 إعلان</div>
 
-  <!-- ✅ شبكة الفيديوهات (124 / 456 / 789) -->
-  <div class="video-grid">
+  <div class="video-grid" id="videoGrid"></div>
 
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 1</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 2</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 3</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 4</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 5</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 6</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 7</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 8</h4>
-    </div>
-
-    <div class="video-card">
-      <video src="assets/videos/tahara1.mp4" controls></video>
-      <h4>الفيديو 9</h4>
-    </div>
-
+  <div class="pagination">
+    <button onclick="prevPage()">⬅ السابق</button>
+    <span id="pageNum"></span>
+    <button onclick="nextPage()">التالي ➡</button>
   </div>
 
 </div>
 
-<!-- ✅ خانة راسلنا -->
+<!-- ✅ راسلنا -->
 <div class="contact">
   <h3>راسلنا</h3>
-  <input type="text" placeholder="اسمك">
-  <input type="email" placeholder="بريدك">
-  <textarea rows="4" placeholder="رسالتك"></textarea>
-  <button>إرسال</button>
+  <form action="mailto:Souvi2718@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="اسمك" required>
+    <input type="email" name="email" placeholder="بريدك" required>
+    <textarea name="message" rows="4" placeholder="رسالتك"></textarea>
+    <button type="submit">إرسال</button>
+  </form>
 </div>
+
+<footer>
+  <a href="privacy.html">سياسة الخصوصية</a>
+</footer>
+
+<script>
+  let videos = [
+    { title: "الفيديو 1", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 2", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 3", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 4", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 5", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 6", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 7", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 8", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 9", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 10", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/thumb1.jpg" }
+  ];
+
+  let currentPage = 1;
+  let perPage = 9;
+
+  function showVideos(list = videos) {
+    let grid = document.getElementById("videoGrid");
+    grid.innerHTML = "";
+
+    let start = (currentPage - 1) * perPage;
+    let end = start + perPage;
+    let pageVideos = list.slice(start, end);
+
+    pageVideos.forEach((v, i) => {
+      let index = videos.indexOf(v);
+      grid.innerHTML += `
+        <div class="video-card" onclick="openVideo(${index})">
+          <img src="${v.thumb}">
+          <h4>${v.title}</h4>
+        </div>
+      `;
+    });
+
+    document.getElementById("pageNum").textContent =
+      "صفحة " + currentPage + " / " + Math.ceil(list.length / perPage);
+  }
+
+  function openVideo(i){
+    localStorage.setItem("currentVideo", JSON.stringify(videos[i]));
+    location.href = "watch.html";
+  }
+
+  function nextPage() {
+    if (currentPage < Math.ceil(videos.length / perPage)) {
+      currentPage++; showVideos();
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--; showVideos();
+    }
+  }
+
+  function searchVideos() {
+    let q = document.getElementById("search").value.toLowerCase();
+    let filtered = videos.filter(v => v.title.toLowerCase().includes(q));
+    currentPage = 1;
+    showVideos(filtered);
+  }
+
+  showVideos();
+</script>
 
 </body>
 </html>
