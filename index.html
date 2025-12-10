@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>منصة الفيديو</title>
 
-  <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
      data-ad-client="ca-pub-4092780568314289"
      crossorigin="anonymous"></script>
--->
+
+  -->
 
   <style>
     body { margin: 0; font-family: Arial; background: #f3f3f3; }
@@ -68,54 +69,41 @@
 
 <script>
   let videos = [
-    { title: "الفيديو 1", src: "assets/videos/tahara1.mp4", thumb: "assets/videos/videos1.mp4" },
-    { title: "الفيديو 2", src: "assets/videos/tahara2.mp4", thumb: "assets/videos/videos2.mp4" },
-    { title: "الفيديو 3", src: "assets/videos/tahara3.mp4", thumb: "assets/videos/videos3.mp4" },
-    { title: "الفيديو 4", src: "assets/videos/tahara4.mp4", thumb: "assets/videos/videos4.mp4" },
-    { title: "الفيديو 5", src: "assets/videos/tahara5.mp4", thumb: "assets/videos/videos5.mp4" },
-    { title: "الفيديو 6", src: "assets/videos/tahara6.mp4", thumb: "assets/videos/videos6.mp4" },
-    { title: "الفيديو 7", src: "assets/videos/tahara7.mp4", thumb: "assets/videos/videos7.mp4" },
-    { title: "الفيديو 8", src: "assets/videos/tahara8.mp4", thumb: "assets/videos/videos8.mp4" },
-    { title: "الفيديو 9", src: "assets/videos/tahara9.mp4", thumb: "assets/videos/videos9.mp4" },
-    { title: "الفيديو 10", src: "assets/videos/tahara10.mp4", thumb: "assets/videos/videos10.mp4"},
-    { title: "الفيديو 11", src: "assets/videos/tahara11.mp4", thumb: "assets/videos/videos11.mp4" }
-    
+    { title: "الفيديو 1", src: "assets/videos/video1.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 2", src: "assets/videos/video2.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 3", src: "assets/videos/video3.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 4", src: "assets/videos/video4.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 5", src: "assets/videos/video5.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 6", src: "assets/videos/video6.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 7", src: "assets/videos/video7.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 8", src: "assets/videos/video8.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 9", src: "assets/videos/video9.mp4", thumb: "assets/videos/thumb1.jpg" },
+    { title: "الفيديو 10", src: "assets/videos/video10.mp4", thumb: "assets/videos/thumb1.jpg" }
   ];
 
   let currentPage = 1;
   let perPage = 9;
 
   function showVideos(list = videos) {
-  let grid = document.getElementById("videoGrid");
-  grid.innerHTML = "";
+    let grid = document.getElementById("videoGrid");
+    grid.innerHTML = "";
 
-  let start = (currentPage - 1) * perPage;
-  let end = start + perPage;
-  let pageVideos = list.slice(start, end);
+    let start = (currentPage - 1) * perPage;
+    let end = start + perPage;
+    let pageVideos = list.slice(start, end);
 
-  pageVideos.forEach((v, i) => {
-    let index = videos.indexOf(v);
-    let videoId = "vid_" + index;
+    pageVideos.forEach((v, i) => {
+      let index = videos.indexOf(v);
+      grid.innerHTML += `
+        <div class="video-card" onclick="openVideo(${index})">
+          <img src="${v.thumb}">
+          <h4>${v.title}</h4>
+        </div>
+      `;
+    });
 
-    grid.innerHTML += `
-      <div class="video-card" onclick="openVideo(${index})">
-        <video id="${videoId}" src="${v.src}" muted playsinline></video>
-        <h4>${v.title}</h4>
-      </div>
-    `;
-
-    setTimeout(() => {
-      let vid = document.getElementById(videoId);
-      if (vid) {
-        vid.currentTime = 1;
-        vid.pause();
-      }
-    }, 300);
-  });
-
-  document.getElementById("pageNum").textContent =
-    "صفحة " + currentPage + " / " + Math.ceil(list.length / perPage);
-}
+    document.getElementById("pageNum").textContent =
+      "صفحة " + currentPage + " / " + Math.ceil(list.length / perPage);
   }
 
   function openVideo(i){
