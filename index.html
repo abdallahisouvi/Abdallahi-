@@ -4,28 +4,110 @@
   <meta charset="UTF-8">
   <title>منصة الفيديو</title>
 
-<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+  <!-- ✅ ضع كود AdSense هنا بعد القبول -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
      data-ad-client="ca-pub-4092780568314289"
-     crossorigin="anonymous"></script>
 
+     crossorigin="anonymous"></script>
   -->
 
   <style>
-    body { margin: 0; font-family: Arial; background: #f3f3f3; }
-    header { background: linear-gradient(45deg, #3f51b5, #2196f3); padding: 20px; color: white; text-align: center; }
-    .search-box input { margin-top: 10px; width: 80%; padding: 10px; border-radius: 20px; border: none; }
-    .container { padding: 15px; }
-    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .video-card { background: white; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,0.2); cursor: pointer; }
-    .video-card img { width: 100%; height: 150px; object-fit: cover; }
-    .video-card h4 { font-size: 13px; padding: 5px; }
-    .pagination { text-align: center; margin: 20px 0; }
-    .pagination button { padding: 10px 20px; margin: 5px; border: none; background: #2196f3; color: white; border-radius: 5px; }
-    .ads { background: #ddd; text-align: center; padding: 20px; border-radius: 10px; margin: 15px 0; }
-    .contact { background: #222; color: white; padding: 20px; }
-    .contact input, .contact textarea { width: 100%; margin: 6px 0; padding: 8px; border-radius: 5px; border: none; }
-    .contact button { width: 100%; padding: 10px; background: #2196f3; border: none; color: white; border-radius: 5px; }
-    footer { text-align:center; padding:15px; font-size:13px; }
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #f3f3f3;
+    }
+
+    header {
+      background: linear-gradient(45deg, #3f51b5, #2196f3);
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .search-box input {
+      margin-top: 10px;
+      width: 80%;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .video-card h4 {
+      font-size: 13px;
+      padding: 5px;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .pagination button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background: #2196f3;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .ads {
+      background: #ddd;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .contact {
+      background: #222;
+      color: white;
+      padding: 20px;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      margin: 6px 0;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 10px;
+      background: #2196f3;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -40,7 +122,8 @@
 
 <div class="container">
 
-  <div class="ads">📢 إعلان</div>
+  <!-- ✅ مكان إعلان AdSense -->
+  <div class="ads">📢 هنا إعلان AdSense</div>
 
   <div class="video-grid" id="videoGrid"></div>
 
@@ -52,7 +135,7 @@
 
 </div>
 
-<!-- ✅ راسلنا -->
+<!-- ✅ راسلنا مرتبط بالإيميل -->
 <div class="contact">
   <h3>راسلنا</h3>
   <form action="mailto:Souvi2718@gmail.com" method="post" enctype="text/plain">
@@ -63,22 +146,19 @@
   </form>
 </div>
 
-<footer>
-  <a href="privacy.html">سياسة الخصوصية</a>
-</footer>
-
 <script>
+  // ✅ قائمة الفيديوهات (أنت تضيف هنا فقط)
   let videos = [
-    { title: "الفيديو 1", src: "assets/videos/video1.mp4", thumb: "assets/tahara1/thumb1.jpg" },
-    { title: "الفيديو 2", src: "assets/videos/video2.mp4", thumb: "assets/tahara2/thumb1.jpg" },
-    { title: "الفيديو 3", src: "assets/videos/video3.mp4", thumb: "assets/tahara3/thumb1.jpg" },
-    { title: "الفيديو 4", src: "assets/videos/video4.mp4", thumb: "assets/tahara4/thumb1.jpg" },
-    { title: "الفيديو 5", src: "assets/videos/video5.mp4", thumb: "assets/tahara5/thumb1.jpg" },
-    { title: "الفيديو 6", src: "assets/videos/video6.mp4", thumb: "assets/tahara6/thumb1.jpg" },
-    { title: "الفيديو 7", src: "assets/videos/video7.mp4", thumb: "assets/tahara7/thumb1.jpg" },
-    { title: "الفيديو 8", src: "assets/videos/video8.mp4", thumb: "assets/tahara8/thumb1.jpg" },
-    { title: "الفيديو 9", src: "assets/videos/video9.mp4", thumb: "assets/tahara9/thumb1.jpg" },
-    { title: "الفيديو 10", src: "assets/videos/video10.mp4", thumb: "assets/tahara10/thumb1.jpg" }    
+    { title: "الفيديو 1", src: "assets/videos/tahara1.mp4" },
+    { title: "الفيديو 2", src: "assets/videos/tahara2.mp4" },
+    { title: "الفيديو 3", src: "assets/videos/tahara3.mp4" },
+    { title: "الفيديو 4", src: "assets/videos/tahara4.mp4" },
+    { title: "الفيديو 5", src: "assets/videos/tahara5.mp4" },
+    { title: "الفيديو 6", src: "assets/videos/tahara6.mp4" },
+    { title: "الفيديو 7", src: "assets/videos/tahara7.mp4" },
+    { title: "الفيديو 8", src: "assets/videos/tahara8.mp4" },
+    { title: "الفيديو 9", src: "assets/videos/tahara9.mp4" },
+    { title: "الفيديو 10", src: "assets/videos/tahara10.mp4" }
   ];
 
   let currentPage = 1;
@@ -92,11 +172,10 @@
     let end = start + perPage;
     let pageVideos = list.slice(start, end);
 
-    pageVideos.forEach((v, i) => {
-      let index = videos.indexOf(v);
+    pageVideos.forEach(v => {
       grid.innerHTML += `
-        <div class="video-card" onclick="openVideo(${index})">
-          <img src="${v.thumb}">
+        <div class="video-card">
+          <video src="${v.src}" controls></video>
           <h4>${v.title}</h4>
         </div>
       `;
@@ -106,20 +185,17 @@
       "صفحة " + currentPage + " / " + Math.ceil(list.length / perPage);
   }
 
-  function openVideo(i){
-    localStorage.setItem("currentVideo", JSON.stringify(videos[i]));
-    location.href = "watch.html";
-  }
-
   function nextPage() {
     if (currentPage < Math.ceil(videos.length / perPage)) {
-      currentPage++; showVideos();
+      currentPage++;
+      showVideos();
     }
   }
 
   function prevPage() {
     if (currentPage > 1) {
-      currentPage--; showVideos();
+      currentPage--;
+      showVideos();
     }
   }
 
